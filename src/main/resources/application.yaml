@@ -1,3 +1,14 @@
 spring:
   application:
     name: database-migrations-lab
+  datasource:
+    url: jdbc:mysql://localhost:3306/migrations_lab
+    username: root
+    password: root@123
+  flyway:
+    enabled: true
+    baseline-on-migrate: false # treats the existing schema as baseline if set to true, applies migrations from V2
+    locations: classpath:db/flyway
+logging:
+  level:
+    org.flywaydb: DEBUG
